@@ -12,6 +12,7 @@ jobs:
       matrix:
         version:
           - 1.67.0
+          - 1.82.0
     steps:
       - uses: actions/checkout@v2
       - run: |
