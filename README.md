@@ -6,3 +6,5 @@ We use this within our build/deployment pipeline.
 Available versions:
 
 - `1.67.0`
+- `1.82.0`
+- `2.48.0`
