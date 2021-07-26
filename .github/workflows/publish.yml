@@ -17,6 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          echo ${{ secrets.DOCKER_HUB_PASSWORD }} | docker login -u mybuilderautomation --password-stdin
-          docker build --build-arg SERVERLESS_VERSION=${{ matrix.version }} -t mybuilder/serverless:${{ matrix.version }} .
-          docker push mybuilder/serverless:${{ matrix.version }}
+          echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u irrelevant-user --password-stdin
+          docker build --build-arg SERVERLESS_VERSION=${{ matrix.version }} -t ghcr.io/mybuilder/serverless:${{ matrix.version }} .
+          docker push ghcr.io/mybuilder/serverless:${{ matrix.version }}
