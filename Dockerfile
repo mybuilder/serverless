@@ -1,9 +1,11 @@
-FROM node:13.12.0-alpine3.11
+FROM node:17.0.1-alpine3.14
 
 ARG SERVERLESS_VERSION
 
 RUN yarn global add serverless@${SERVERLESS_VERSION} \
  && apk --no-cache add docker
+
+ADD ./plugins /plugins
 
 ENTRYPOINT ["serverless"]
 
