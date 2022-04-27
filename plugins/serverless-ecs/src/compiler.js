@@ -95,7 +95,7 @@ const compileTaskDefinition = (images, task) => ({
         Command: task.command,
         Memory: task.memory,
         Cpu: task.cpu,
-        MemoryReservation: 128,
+        MemoryReservation: task.memoryReservation,
         LogConfiguration: {
           LogDriver: 'awslogs',
           Options: {
