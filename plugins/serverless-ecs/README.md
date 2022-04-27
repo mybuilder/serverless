@@ -37,11 +37,14 @@ ecs:
   # (required) you must set the default capacity provider on the cluster as this is what is used for task execution.
   clusterArn: 'arn:aws:ecs:eu-west-1:123456:cluster/MyCluster'
 
-  # (optional) default memory you wish to allocate to each task (if not supplied at the task level)
+  # (optional) The default amount (in MiB) of memory to present to the given task (if not supplied at the task level).
   # https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size
-  memory: '0.5GB'
+  memory: 256
 
-  # (optional) default CPU you wish to allocate to each task (if not supplied at the task level)
+  # (optional) The default soft limit (in MiB) of memory to reserve for the given task (if not supplied at the task level).
+  memoryReservation: 128
+
+  # (optional) default CPU you wish to allocate to each task (if not supplied at the task level).
   # https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size
   cpu: 256
 
@@ -96,9 +99,12 @@ ecs:
       entryPoint:
         - my-entrypoint
 
-      # (optional) memory you wish to allocate to the given task, defaults to the globally supplied memory value.
+      # (optional) The amount (in MiB) of memory to present to the given task, defaults to the globally supplied memory value.
       # https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size
-      memory: '0.5GB'
+      memory: 256
+
+      # (optional) The soft limit (in MiB) of memory to reserve for the given task, defaults to the globally supplied CPU value.
+      memoryReservation: 128
 
       # (optional) CPU you wish to allocate to the given task, defaults to the globally supplied CPU value.
       # https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size
