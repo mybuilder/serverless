@@ -73,7 +73,7 @@ class ServerlessEcs {
   getIamRoleStatements() {
     const providerStatements = get(
       this.serverless.service.provider,
-      'iam.role.statement',
+      'iam.role.statements',
       []
     );
 
