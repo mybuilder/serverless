@@ -17,6 +17,7 @@ jobs:
           - 2.63.0
           - 2.68.0
           - 3.7.4
+          - 3.23.0
     steps:
       - uses: actions/checkout@v2
       - run: |
